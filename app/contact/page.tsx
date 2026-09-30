@@ -1,0 +1,49 @@
+import type { Metadata } from "next";
+import { ContactDetails } from "@/components/sections/ContactDetails";
+import { ContactForm } from "@/components/sections/ContactForm";
+import { PageHeader } from "@/components/sections/PageHeader";
+import { Reveal } from "@/components/ui/Reveal";
+import { Section } from "@/components/ui/Section";
+import { Eyebrow } from "@/components/ui/SectionHeading";
+import { site } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: `Talk to PhysioErgo Integrative Consultancy Ltd in Nairobi, Kenya. Call ${site.phone} or email ${site.email} to arrange a workplace ergonomics or wellness consultation.`,
+  alternates: { canonical: "/contact" },
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <PageHeader
+        eyebrow="Contact"
+        title="Start the Conversation"
+        lead="We would welcome the opportunity to understand your organisation's unique needs and explore how PhysioErgo can support your goals."
+      />
+
+      <Section padding="tight" className="pb-section">
+        <div className="grid gap-y-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-x-16">
+          <ContactDetails />
+
+          <div id="consultation-form" className="scroll-mt-28">
+            <Reveal className="mb-8">
+              <Eyebrow>Consultation Request</Eyebrow>
+              <h2 className="text-subsection mt-5 text-charcoal">
+                Tell us about your workplace
+              </h2>
+              <p className="mt-4 max-w-xl text-charcoal-muted">
+                Share a few details and we will come back to you to arrange an
+                initial ergonomic or wellness review.
+              </p>
+            </Reveal>
+
+            <Reveal delay={100}>
+              <ContactForm />
+            </Reveal>
+          </div>
+        </div>
+      </Section>
+    </>
+  );
+}
