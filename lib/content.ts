@@ -63,6 +63,7 @@ export const navigation = [
   { label: "Services", href: "/services" },
   { label: "Our Approach", href: "/approach" },
   { label: "Workplace Wellness", href: "/workplace-wellness" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -70,8 +71,9 @@ export const navigation = [
  * Every frame below was opened and checked before being written in, and the alt
  * text describes what is actually visible rather than the slot name.
  *
- * `standingDesk`, `workstationDetail` and `screenFatigue` are PhysioErgo's own
- * photographs. The rest are free-licence Unsplash stock, several from
+ * `standingDesk`, `workstationDetail`, `screenFatigue` and every frame in
+ * `gallery` are PhysioErgo's own photographs. The rest are free-licence
+ * Unsplash stock, several from
  * Lagos-based shoots, downloaded and served locally rather than hotlinked;
  * Unsplash+ premium images were ruled out as they carry a separate Getty licence.
  * Replace these with company photography as it becomes available.
@@ -134,6 +136,55 @@ export const images = {
     alt: "A professional working at a wooden desk with a notebook, surrounded by greenery.",
   },
 } as const;
+
+/**
+ * PhysioErgo's own workstation photographs. Duplicate uploads of the same frame
+ * were dropped, so each entry is a distinct view.
+ */
+export const gallery = [
+  {
+    src: "/photos/ergonomic-chair.webp",
+    width: 1024,
+    height: 768,
+    alt: "A mesh office chair with headrest and adjustable arms beside a desk with two monitors and a laptop.",
+    caption: "Mesh chair with a headrest, set beside a dual-monitor desk.",
+  },
+  {
+    src: "/photos/chair-profile.webp",
+    width: 768,
+    height: 1024,
+    alt: "Side view of a mesh office chair at a desk, with a lumbar cushion, wrist rest and mouse.",
+    caption: "Lumbar support, with a wrist rest beside the mouse.",
+  },
+  {
+    src: "/photos/desk-overhead.webp",
+    width: 1024,
+    height: 768,
+    alt: "Overhead view of a desk with two monitors, a laptop, an external keyboard and a wrist rest.",
+    caption: "External keyboard and wrist rest under two monitors.",
+  },
+  {
+    src: "/photos/chair-footrest.webp",
+    width: 768,
+    height: 1024,
+    alt: "A mesh office chair with an extended footrest, adjustable arms and a chrome base.",
+    caption: "Footrest extended on an adjustable mesh chair.",
+  },
+  {
+    src: "/photos/screen-glasses.webp",
+    width: 1024,
+    height: 768,
+    alt: "A pair of screen glasses resting on an open laptop keyboard.",
+    caption: "Screen glasses kept at the laptop.",
+  },
+  {
+    src: "/photos/standing-desk.webp",
+    width: 1024,
+    height: 768,
+    alt: "A height-adjustable desk raised to standing height, with a laptop, tablet and separate keyboard.",
+    caption: "A height-adjustable desk raised for standing work.",
+  },
+] as const;
 
 export const hero = {
   eyebrow: "Workplace Wellness",

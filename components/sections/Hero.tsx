@@ -47,12 +47,12 @@ export function Hero() {
           <div className="relative">
             <div className="group relative">
               <Media
-                src={images.heroConsultation.src}
-                alt={images.heroConsultation.alt}
+                src={images.workstationDetail.src}
+                alt={images.workstationDetail.alt}
                 priority
                 zoomOnHover
                 sizes="(max-width: 1024px) 92vw, 46vw"
-                className="aspect-4/5 rounded-[2rem] shadow-lift sm:aspect-3/2 lg:aspect-4/5 lg:rounded-[2.5rem]"
+                className="aspect-4/3 rounded-[2rem] shadow-lift lg:rounded-[2.5rem]"
               />
 
               <span

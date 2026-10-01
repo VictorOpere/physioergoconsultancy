@@ -20,7 +20,7 @@ export default function AboutPage() {
         eyebrow="About PhysioErgo"
         title="Wellness in Motion"
         lead={about.body}
-        image={images.diverseTeam}
+        image={images.collaborativeTable}
       />
       <AboutIntro
         withCta={false}

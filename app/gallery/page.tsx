@@ -1,0 +1,27 @@
+import type { Metadata } from "next";
+import { GalleryGrid } from "@/components/sections/GalleryGrid";
+import { PageHeader } from "@/components/sections/PageHeader";
+import { Section } from "@/components/ui/Section";
+
+export const metadata: Metadata = {
+  title: "Gallery",
+  description:
+    "Photographs of real workstations PhysioErgo Integrative Consultancy assesses: mesh chairs, dual monitors, wrist rests, screen glasses and a height-adjustable desk.",
+  alternates: { canonical: "/gallery" },
+};
+
+export default function GalleryPage() {
+  return (
+    <>
+      <PageHeader
+        eyebrow="Gallery"
+        title="The Workstation, Up Close"
+        lead="Photographs of real workstations PhysioErgo assesses — chairs, desks and screen setups, shown as they are used."
+      />
+
+      <Section padding="tight" className="pb-section">
+        <GalleryGrid />
+      </Section>
+    </>
+  );
+}

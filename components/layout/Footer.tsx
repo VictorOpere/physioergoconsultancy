@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-leaf-900 text-leaf-100">
+    <footer className="relative overflow-hidden bg-leaf-950 text-canvas">
       <div
         aria-hidden="true"
         className="absolute -right-32 -top-40 h-[28rem] w-[28rem] rounded-full bg-leaf-800/50 blur-3xl"
@@ -19,18 +19,18 @@ export function Footer() {
             <p className="text-[1.65rem] font-semibold tracking-[-0.025em] text-canvas">
               PhysioErgo
             </p>
-            <p className="mt-1 text-[0.95rem] text-leaf-200">
+            <p className="mt-1 text-[0.95rem] text-canvas/80">
               {site.legalSuffix}
             </p>
-            <p className="mt-5 text-[1.05rem] font-medium text-leaf-300">
+            <p className="mt-5 text-[1.05rem] font-medium text-canvas">
               {site.tagline}
             </p>
-            <p className="mt-5 text-[0.95rem] leading-relaxed text-leaf-200/80">
+            <p className="mt-5 text-[0.95rem] leading-relaxed text-canvas/80">
               Integrated ergonomics and physiotherapy solutions for healthier,
               safer and higher-performing workplaces.
             </p>
 
-            <h2 className="eyebrow mt-8 text-leaf-300">Follow</h2>
+            <h2 className="eyebrow mt-8 text-canvas/70">Follow</h2>
             <ul className="mt-4 flex items-center gap-2">
               {site.social.map((channel) => (
                 <li key={channel.label}>
@@ -39,7 +39,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${site.shortName} on ${channel.label}`}
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-leaf-700/70 text-leaf-100 transition-colors duration-200 hover:border-leaf-300 hover:bg-leaf-800 hover:text-canvas"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-canvas/30 text-canvas transition-colors duration-200 hover:border-canvas hover:bg-leaf-800"
                   >
                     <BrandIcon name={channel.icon} size={18} />
                   </a>
@@ -51,7 +51,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Message ${site.shortName} on WhatsApp`}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-leaf-700/70 text-leaf-100 transition-colors duration-200 hover:border-leaf-300 hover:bg-leaf-800 hover:text-canvas"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-canvas/30 text-canvas transition-colors duration-200 hover:border-canvas hover:bg-leaf-800"
                 >
                   <BrandIcon name="whatsapp" size={18} />
                 </a>
@@ -60,13 +60,13 @@ export function Footer() {
           </div>
 
           <nav aria-label="Footer">
-            <h2 className="eyebrow text-leaf-300">Explore</h2>
+            <h2 className="eyebrow text-canvas/70">Explore</h2>
             <ul className="mt-4 flex flex-col gap-1">
               {navigation.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="inline-block whitespace-nowrap py-2 text-[0.97rem] text-leaf-100/85 transition-colors duration-200 hover:text-canvas"
+                    className="inline-block whitespace-nowrap py-2 text-[0.97rem] text-canvas transition-colors duration-200 hover:text-leaf-200"
                   >
                     {item.label}
                   </Link>
@@ -76,18 +76,18 @@ export function Footer() {
           </nav>
 
           <div>
-            <h2 className="eyebrow text-leaf-300">Contact</h2>
+            <h2 className="eyebrow text-canvas/70">Contact</h2>
             <ul className="mt-4 flex flex-col gap-2 text-[0.97rem]">
               {site.phones.map((phone, index) => (
                 <li key={phone.display}>
                   <a
                     href={phone.tel}
-                    className="flex items-start gap-3 py-2 text-leaf-100/85 transition-colors duration-200 hover:text-canvas"
+                    className="flex items-start gap-3 py-2 text-canvas transition-colors duration-200 hover:text-leaf-200"
                   >
                     <Icon
                       name="phone"
                       size={18}
-                      className={`mt-0.5 shrink-0 text-leaf-300 ${index > 0 ? "invisible" : ""}`}
+                      className={`mt-0.5 shrink-0 text-leaf-200 ${index > 0 ? "invisible" : ""}`}
                     />
                     {phone.display}
                   </a>
@@ -96,14 +96,14 @@ export function Footer() {
               <li>
                 <a
                   href={site.emailHref}
-                  className="flex items-start gap-3 break-all py-2 text-leaf-100/85 transition-colors duration-200 hover:text-canvas"
+                  className="flex items-start gap-3 break-all py-2 text-canvas transition-colors duration-200 hover:text-leaf-200"
                 >
-                  <Icon name="mail" size={18} className="mt-0.5 shrink-0 text-leaf-300" />
+                  <Icon name="mail" size={18} className="mt-0.5 shrink-0 text-leaf-200" />
                   {site.email}
                 </a>
               </li>
-              <li className="flex items-start gap-3 py-2 text-leaf-100/85">
-                <Icon name="pin" size={18} className="mt-0.5 shrink-0 text-leaf-300" />
+              <li className="flex items-start gap-3 py-2 text-canvas">
+                <Icon name="pin" size={18} className="mt-0.5 shrink-0 text-leaf-200" />
                 <address className="not-italic leading-relaxed">
                   {site.city}
                   <br />
@@ -118,7 +118,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-leaf-700/60 pt-7 text-[0.85rem] text-leaf-200/85 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-canvas/20 pt-7 text-[0.85rem] text-canvas/75 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.name}. All rights reserved.
           </p>
