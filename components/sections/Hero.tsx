@@ -7,10 +7,10 @@ import { hero, images } from "@/lib/content";
 export function Hero() {
   return (
     <section className="relative overflow-hidden pb-block pt-28 lg:pt-36">
-      <Blob className="-left-40 -top-24 h-[34rem] w-[34rem]" color="var(--color-sage-200)" />
+      <Blob className="-left-40 -top-24 h-[34rem] w-[34rem]" color="var(--color-leaf-200)" />
       <Blob
         className="-right-32 top-40 h-[30rem] w-[30rem]"
-        color="var(--color-sand-200)"
+        color="var(--color-leaf-100)"
       />
 
       <div className="mx-auto w-full max-w-[84rem] px-gutter">
@@ -18,11 +18,11 @@ export function Hero() {
           <div className="reveal is-revealed max-w-3xl">
             <Eyebrow>{hero.eyebrow}</Eyebrow>
 
-            <h1 className="text-hero mt-6 text-charcoal">
+            <h1 className="text-hero mt-6 text-ink">
               {hero.headingLines.map((line, index) => (
                 <span key={line} className="block">
                   {index === hero.headingLines.length - 1 ? (
-                    <span className="text-sage-700">{line}</span>
+                    <span className="text-leaf-700">{line}</span>
                   ) : (
                     line
                   )}
@@ -30,7 +30,7 @@ export function Hero() {
               ))}
             </h1>
 
-            <p className="text-lead mt-7 max-w-lg text-charcoal-muted">
+            <p className="text-lead mt-7 max-w-lg text-ink-muted">
               {hero.lead}
             </p>
 
@@ -57,13 +57,13 @@ export function Hero() {
 
               <span
                 aria-hidden="true"
-                className="absolute -right-4 -top-5 hidden h-24 w-24 rounded-full border border-sand-300/70 sm:block"
+                className="absolute -right-4 -top-5 hidden h-24 w-24 rounded-full border border-leaf-300/70 sm:block"
               />
             </div>
 
             <div className="relative z-10 mx-auto -mt-12 w-[min(22rem,88%)] rounded-panel border border-line/80 bg-surface/95 p-6 shadow-lift backdrop-blur-sm lg:absolute lg:-bottom-10 lg:-left-12 lg:mt-0 lg:w-[19.5rem]">
-              <p className="eyebrow text-sage-700">{hero.floatingCard.label}</p>
-              <p className="mt-3 text-[1.05rem] leading-snug font-medium tracking-[-0.015em] text-charcoal">
+              <p className="eyebrow text-leaf-700">{hero.floatingCard.label}</p>
+              <p className="mt-3 text-[1.05rem] leading-snug font-medium tracking-[-0.015em] text-ink">
                 {hero.floatingCard.text}
               </p>
             </div>

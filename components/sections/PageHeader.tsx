@@ -23,19 +23,19 @@ export function PageHeader({
     <section className="relative overflow-hidden pb-block pt-28 lg:pt-40">
       <Blob
         className="-right-40 -top-32 h-[32rem] w-[32rem]"
-        color="var(--color-sage-200)"
+        color="var(--color-leaf-200)"
       />
       <Blob
         className="-left-44 top-52 h-[26rem] w-[26rem]"
-        color="var(--color-sand-200)"
+        color="var(--color-leaf-100)"
       />
 
       <div className="mx-auto w-full max-w-[84rem] px-gutter">
         <div className="reveal is-revealed max-w-3xl">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="text-display mt-6 text-charcoal">{title}</h1>
+          <h1 className="text-display mt-6 text-ink">{title}</h1>
           {lead ? (
-            <p className="text-lead mt-7 max-w-2xl text-charcoal-muted">{lead}</p>
+            <p className="text-lead mt-7 max-w-2xl text-ink-muted">{lead}</p>
           ) : null}
           {children}
         </div>

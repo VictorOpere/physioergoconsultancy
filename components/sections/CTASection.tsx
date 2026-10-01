@@ -7,19 +7,19 @@ export function CTASection() {
   return (
     <Section padding="tight" className="pb-section">
       <Reveal>
-        <div className="relative isolate overflow-hidden rounded-[2rem] bg-sage-900 px-7 py-14 text-center sm:px-12 lg:rounded-[2.75rem] lg:px-20 lg:py-24">
+        <div className="relative isolate overflow-hidden rounded-[2rem] bg-leaf-900 px-7 py-14 text-center sm:px-12 lg:rounded-[2.75rem] lg:px-20 lg:py-24">
           <span
             aria-hidden="true"
-            className="absolute -left-24 -top-28 h-80 w-80 rounded-full bg-sage-700/55 blur-3xl"
+            className="absolute -left-24 -top-28 h-80 w-80 rounded-full bg-leaf-700/55 blur-3xl"
           />
           <span
             aria-hidden="true"
-            className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-sand-500/20 blur-3xl"
+            className="absolute -bottom-32 -right-20 h-96 w-96 rounded-full bg-leaf-500/20 blur-3xl"
           />
 
           <div className="relative mx-auto max-w-3xl">
-            <h2 className="text-section text-ivory">{finalCta.heading}</h2>
-            <p className="text-lead mx-auto mt-7 max-w-2xl text-sage-100/85">
+            <h2 className="text-section text-canvas">{finalCta.heading}</h2>
+            <p className="text-lead mx-auto mt-7 max-w-2xl text-leaf-100/85">
               {finalCta.text}
             </p>
 
@@ -35,19 +35,19 @@ export function CTASection() {
               <ButtonLink
                 href={finalCta.secondaryCta.href}
                 size="lg"
-                className="border border-sage-500/70 bg-transparent text-ivory shadow-none hover:bg-sage-800"
+                className="border border-leaf-500/70 bg-transparent text-canvas shadow-none hover:bg-leaf-800"
               >
                 {finalCta.secondaryCta.label}
               </ButtonLink>
             </div>
 
-            <p className="mt-9 text-[0.92rem] text-sage-200/80">
+            <p className="mt-9 text-[0.92rem] text-leaf-200/80">
               Prefer to talk directly?{" "}
               <a
-                href={site.phoneHref}
-                className="font-medium text-ivory underline decoration-sand-300/60 underline-offset-4 transition-colors hover:decoration-sand-300"
+                href={site.phones[0].tel}
+                className="font-medium text-canvas underline decoration-leaf-300/60 underline-offset-4 transition-colors hover:decoration-leaf-300"
               >
-                {site.phone}
+                {site.phones[0].display}
               </a>
             </p>
           </div>

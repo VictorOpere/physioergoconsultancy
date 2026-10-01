@@ -12,7 +12,7 @@ export function Benefits() {
         <div>
           <Reveal>
             <Eyebrow>Why Ergonomics Matters</Eyebrow>
-            <h2 className="text-section mt-6 text-charcoal">
+            <h2 className="text-section mt-6 text-ink">
               Invest in the People Behind the Performance
             </h2>
           </Reveal>
@@ -25,10 +25,10 @@ export function Benefits() {
                 delay={index * 60}
                 className="flex items-start gap-3.5"
               >
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sage-100 text-sage-700">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-leaf-100 text-leaf-700">
                   <Icon name="check" size={14} strokeWidth={2} />
                 </span>
-                <span className="text-[0.97rem] leading-relaxed text-charcoal-muted">
+                <span className="text-[0.97rem] leading-relaxed text-ink-muted">
                   {benefit}
                 </span>
               </Reveal>
@@ -38,15 +38,15 @@ export function Benefits() {
 
         <Reveal delay={120} className="group relative">
           <Media
-            src={images.teamLaptop.src}
-            alt={images.teamLaptop.alt}
+            src={images.standingDesk.src}
+            alt={images.standingDesk.alt}
             zoomOnHover
             sizes="(max-width: 1024px) 92vw, 44vw"
             className="aspect-4/5 rounded-[2rem] shadow-soft"
           />
           <span
             aria-hidden="true"
-            className="absolute -bottom-6 -left-6 -z-10 hidden h-40 w-40 rounded-[2rem] bg-sand-200/70 lg:block"
+            className="absolute -bottom-6 -left-6 -z-10 hidden h-40 w-40 rounded-[2rem] bg-leaf-100 lg:block"
           />
         </Reveal>
       </div>

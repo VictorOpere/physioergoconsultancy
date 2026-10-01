@@ -15,14 +15,14 @@ export function Values() {
       <ul className="mt-block border-t border-line">
         {values.map((value, index) => (
           <Reveal as="li" key={value.title} delay={index * 90}>
-            <div className="group grid items-baseline gap-3 border-b border-line py-8 transition-colors duration-300 hover:bg-sand-100/50 md:grid-cols-[auto_1fr_1.15fr] md:gap-10 md:py-10">
-              <span className="eyebrow text-sage-600 md:w-10">
+            <div className="group grid items-baseline gap-3 border-b border-line py-8 transition-colors duration-300 hover:bg-mist/50 md:grid-cols-[auto_1fr_1.15fr] md:gap-10 md:py-10">
+              <span className="eyebrow text-leaf-700 md:w-10">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <h3 className="text-subsection text-charcoal transition-transform duration-300 ease-out md:group-hover:translate-x-1.5">
+              <h3 className="text-subsection text-ink transition-transform duration-300 ease-out md:group-hover:translate-x-1.5">
                 {value.title}
               </h3>
-              <p className="text-[1rem] leading-relaxed text-charcoal-muted">
+              <p className="text-[1rem] leading-relaxed text-ink-muted">
                 {value.description}
               </p>
             </div>

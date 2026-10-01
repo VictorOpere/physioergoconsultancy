@@ -10,11 +10,11 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-sage-700 text-ivory shadow-soft hover:bg-sage-800 hover:shadow-lift",
+    "bg-leaf-700 text-canvas shadow-soft hover:bg-leaf-800 hover:shadow-lift",
   outline:
-    "border border-sage-300 text-charcoal hover:border-sage-700 hover:bg-sage-50",
-  ghost: "text-charcoal hover:text-sage-700",
-  light: "bg-ivory text-sage-900 shadow-soft hover:bg-white hover:shadow-lift",
+    "border border-leaf-300 text-ink hover:border-leaf-700 hover:bg-leaf-50",
+  ghost: "text-ink hover:text-leaf-700",
+  light: "bg-canvas text-leaf-900 shadow-soft hover:bg-white hover:shadow-lift",
 };
 
 const sizes: Record<Size, string> = {

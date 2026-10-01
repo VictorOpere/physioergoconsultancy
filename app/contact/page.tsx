@@ -9,7 +9,7 @@ import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Talk to PhysioErgo Integrative Consultancy Ltd in Nairobi, Kenya. Call ${site.phone} or email ${site.email} to arrange a workplace ergonomics or wellness consultation.`,
+  description: `Talk to PhysioErgo Integrative Consultancy Ltd in Nairobi, Kenya. Call ${site.phones[0].display} or email ${site.email} to arrange a workplace ergonomics or wellness consultation.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -29,10 +29,10 @@ export default function ContactPage() {
           <div id="consultation-form" className="scroll-mt-28">
             <Reveal className="mb-8">
               <Eyebrow>Consultation Request</Eyebrow>
-              <h2 className="text-subsection mt-5 text-charcoal">
+              <h2 className="text-subsection mt-5 text-ink">
                 Tell us about your workplace
               </h2>
-              <p className="mt-4 max-w-xl text-charcoal-muted">
+              <p className="mt-4 max-w-xl text-ink-muted">
                 Share a few details and we will come back to you to arrange an
                 initial ergonomic or wellness review.
               </p>

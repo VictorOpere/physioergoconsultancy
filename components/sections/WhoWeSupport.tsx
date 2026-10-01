@@ -6,7 +6,7 @@ import { audiences } from "@/lib/content";
 
 export function WhoWeSupport() {
   return (
-    <Section className="bg-sand-100">
+    <Section className="bg-mist">
       <SectionHeading
         eyebrow="Who We Support"
         title="Built for Modern Workplaces"
@@ -21,11 +21,11 @@ export function WhoWeSupport() {
             delay={index * 80}
             className="last:max-lg:col-span-2"
           >
-            <div className="group flex h-full flex-col items-center gap-5 rounded-panel border border-line/80 bg-surface px-5 py-9 text-center transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-sage-300 hover:shadow-soft">
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sage-50 text-sage-700 transition-colors duration-300 group-hover:bg-sage-700 group-hover:text-ivory">
+            <div className="group flex h-full flex-col items-center gap-5 rounded-panel border border-line/80 bg-surface px-5 py-9 text-center transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:border-leaf-300 hover:shadow-soft">
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-leaf-50 text-leaf-700 transition-colors duration-300 group-hover:bg-leaf-700 group-hover:text-canvas">
                 <Icon name={audience.icon} size={25} />
               </span>
-              <h3 className="text-[0.98rem] font-semibold leading-snug tracking-[-0.01em] text-charcoal">
+              <h3 className="text-[0.98rem] font-semibold leading-snug tracking-[-0.01em] text-ink">
                 {audience.title}
               </h3>
             </div>

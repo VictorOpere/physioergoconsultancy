@@ -25,7 +25,7 @@ export function AboutIntro({
     <Section className="overflow-hidden">
       <Blob
         className="-left-48 top-1/3 h-[26rem] w-[26rem]"
-        color="var(--color-sand-200)"
+        color="var(--color-leaf-100)"
       />
 
       <div className="grid items-center gap-y-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-x-20">
@@ -41,30 +41,30 @@ export function AboutIntro({
           </div>
 
           <div className="absolute -bottom-7 right-4 flex items-center gap-3 rounded-full border border-line bg-surface px-5 py-3.5 shadow-lift lg:-right-8">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sage-700 text-ivory">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-leaf-700 text-canvas">
               <Icon name="shield" size={18} />
             </span>
-            <span className="eyebrow text-charcoal">{about.badge}</span>
+            <span className="eyebrow text-ink">{about.badge}</span>
           </div>
         </Reveal>
 
         <div>
           <Reveal>
             <Eyebrow>{eyebrow}</Eyebrow>
-            <h2 className="text-section mt-6 text-charcoal">{heading}</h2>
+            <h2 className="text-section mt-6 text-ink">{heading}</h2>
             {body ? (
-              <p className="text-lead mt-7 text-charcoal-muted">{body}</p>
+              <p className="text-lead mt-7 text-ink-muted">{body}</p>
             ) : null}
-            <p className={`text-charcoal-muted ${body ? "mt-5" : "text-lead mt-7"}`}>
+            <p className={`text-ink-muted ${body ? "mt-5" : "text-lead mt-7"}`}>
               {about.supporting}
             </p>
-            <p className="mt-5 text-charcoal-muted">{about.blend}</p>
+            <p className="mt-5 text-ink-muted">{about.blend}</p>
           </Reveal>
 
           <Reveal delay={120}>
-            <figure className="mt-9 rounded-panel border-l-2 border-sage-500 bg-sand-100/70 py-6 pl-7 pr-6">
-              <Icon name="quote" size={26} className="text-sage-500" />
-              <blockquote className="mt-3.5 text-[1.12rem] leading-snug font-medium tracking-[-0.015em] text-charcoal">
+            <figure className="mt-9 rounded-panel border-l-2 border-leaf-500 bg-mist/70 py-6 pl-7 pr-6">
+              <Icon name="quote" size={26} className="text-leaf-500" />
+              <blockquote className="mt-3.5 text-[1.12rem] leading-snug font-medium tracking-[-0.015em] text-ink">
                 {about.philosophy}
               </blockquote>
             </figure>

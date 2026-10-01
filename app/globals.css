@@ -1,36 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  /* Sage — primary natural green */
-  --color-sage-50: #eef2ee;
-  --color-sage-100: #e2e9e3;
-  --color-sage-200: #c9d6cc;
-  --color-sage-300: #a9bdaf;
-  --color-sage-400: #8fa896;
-  --color-sage-500: #7a9382;
-  --color-sage-600: #5e7565;
-  --color-sage-700: #4a5e50;
-  --color-sage-800: #3a4a3f;
-  --color-sage-900: #2f3b33;
-  --color-sage-950: #222b25;
+  /*
+   * Leaf — the brand green, sampled from the logo artwork (hue ~100deg,
+   * ~50% saturation). Shades carry fixed roles because a vivid green cannot
+   * hold small text; ratios below are measured against white.
+   *   50–400  tints and washes
+   *   500     brand accent — decorative fills and graphics only (2.99:1)
+   *   600     large text only (4.12:1)
+   *   700+    body text, links, and button fills with white text (6.29:1)
+   */
+  --color-leaf-50: #f3f9ee;
+  --color-leaf-100: #e4f2d9;
+  --color-leaf-200: #c9e4b2;
+  --color-leaf-300: #a6d184;
+  --color-leaf-400: #84bd59;
+  --color-leaf-500: #66a53c;
+  --color-leaf-600: #528b2e;
+  --color-leaf-700: #3f6b24;
+  --color-leaf-800: #33551e;
+  --color-leaf-900: #2a461b;
+  --color-leaf-950: #16280e;
 
-  /* Sand — warm secondary */
-  --color-sand-50: #f9f5ee;
-  --color-sand-100: #f4ede2;
-  --color-sand-200: #e8dcc8;
-  --color-sand-300: #d9c7ae;
-  --color-sand-400: #c9b294;
-  --color-sand-500: #b79465;
-
-  /* Neutrals */
-  --color-ivory: #faf7f2;
-  --color-ivory-deep: #f4f0e8;
+  /* Neutrals — white page, grey bands */
+  --color-canvas: #ffffff;
+  --color-mist: #f4f6f3;
+  --color-mist-deep: #e9ece7;
   --color-surface: #ffffff;
-  --color-charcoal: #1c1f1d;
-  --color-charcoal-muted: #5a605b;
-  /* Darkened from #767C77 so small muted text clears AA (4.5:1) on ivory. */
-  --color-charcoal-soft: #6b716c;
-  --color-line: #e4e0d7;
+  --color-ink: #15201a;
+  --color-ink-muted: #51594f;
+  /* Holds 4.75:1 on the mist band, so it stays legible in both section tones. */
+  --color-ink-soft: #667065;
+  --color-line: #e2e6e1;
 
   /* Fluid type scale */
   --text-eyebrow: 0.78rem;
@@ -52,9 +53,9 @@
   --radius-media: 28px;
 
   /* Elevation — deliberately soft */
-  --shadow-soft: 0 1px 2px rgb(28 31 29 / 0.03), 0 8px 24px -12px rgb(28 31 29 / 0.1);
-  --shadow-lift: 0 2px 4px rgb(28 31 29 / 0.04), 0 20px 44px -20px rgb(28 31 29 / 0.16);
-  --shadow-nav: 0 1px 0 rgb(28 31 29 / 0.05), 0 12px 32px -24px rgb(28 31 29 / 0.3);
+  --shadow-soft: 0 1px 2px rgb(21 32 26 / 0.03), 0 8px 24px -12px rgb(21 32 26 / 0.1);
+  --shadow-lift: 0 2px 4px rgb(21 32 26 / 0.04), 0 20px 44px -20px rgb(21 32 26 / 0.16);
+  --shadow-nav: 0 1px 0 rgb(21 32 26 / 0.05), 0 12px 32px -24px rgb(21 32 26 / 0.3);
 
   /* Motion */
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
@@ -73,8 +74,8 @@
   }
 
   body {
-    background-color: var(--color-ivory);
-    color: var(--color-charcoal);
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
     font-family: var(--font-sans);
     font-weight: 400;
     line-height: 1.7;
@@ -96,14 +97,14 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-sage-700);
+    outline: 2px solid var(--color-leaf-700);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   ::selection {
-    background-color: var(--color-sage-200);
-    color: var(--color-sage-950);
+    background-color: var(--color-leaf-200);
+    color: var(--color-leaf-950);
   }
 }
 
@@ -134,8 +135,8 @@
     z-index: 60;
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
-    background-color: var(--color-sage-700);
-    color: var(--color-ivory);
+    background-color: var(--color-leaf-700);
+    color: var(--color-canvas);
     font-weight: 600;
     box-shadow: var(--shadow-lift);
     transform: translateY(-200%);

@@ -1,15 +1,10 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-    ],
-  },
-};
+/**
+ * All photography is served from `public/photos`, so no remote image hosts are
+ * configured. Hotlinking Unsplash meant every cold cache had to beat the image
+ * optimiser's upstream timeout before a visitor saw anything.
+ */
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

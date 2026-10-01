@@ -19,14 +19,14 @@ export function Anthropometrics() {
           />
           <span
             aria-hidden="true"
-            className="absolute -right-5 -top-5 -z-10 hidden h-32 w-32 rounded-[1.75rem] bg-sage-100 lg:block"
+            className="absolute -right-5 -top-5 -z-10 hidden h-32 w-32 rounded-[1.75rem] bg-leaf-100 lg:block"
           />
         </Reveal>
 
         <div>
           <Reveal>
             <Eyebrow>{anthropometrics.eyebrow}</Eyebrow>
-            <h2 className="text-section mt-6 text-charcoal">
+            <h2 className="text-section mt-6 text-ink">
               {anthropometrics.heading}
             </h2>
           </Reveal>
@@ -39,10 +39,10 @@ export function Anthropometrics() {
                 delay={index * 70}
                 className="flex items-start gap-3.5"
               >
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sage-100 text-sage-700">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-leaf-100 text-leaf-700">
                   <Icon name="check" size={14} strokeWidth={2} />
                 </span>
-                <span className="text-[0.98rem] leading-relaxed text-charcoal-muted">
+                <span className="text-[0.98rem] leading-relaxed text-ink-muted">
                   {point}
                 </span>
               </Reveal>
@@ -50,9 +50,9 @@ export function Anthropometrics() {
           </ul>
 
           <Reveal delay={140}>
-            <figure className="mt-9 rounded-panel border-l-2 border-sage-500 bg-sand-100/70 py-6 pl-7 pr-6">
-              <Icon name="quote" size={24} className="text-sage-500" />
-              <blockquote className="mt-3 text-[1.1rem] leading-snug font-medium tracking-[-0.015em] text-charcoal">
+            <figure className="mt-9 rounded-panel border-l-2 border-leaf-500 bg-mist/70 py-6 pl-7 pr-6">
+              <Icon name="quote" size={24} className="text-leaf-500" />
+              <blockquote className="mt-3 text-[1.1rem] leading-snug font-medium tracking-[-0.015em] text-ink">
                 {anthropometrics.quote}
               </blockquote>
             </figure>

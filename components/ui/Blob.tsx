@@ -12,7 +12,7 @@ interface BlobProps {
  */
 export function Blob({
   className = "",
-  color = "var(--color-sage-200)",
+  color = "var(--color-leaf-200)",
   animated = true,
 }: BlobProps) {
   return (

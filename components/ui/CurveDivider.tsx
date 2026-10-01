@@ -16,7 +16,7 @@ const shapes = {
  * it stitches seamlessly onto the following section's background colour.
  */
 export function CurveDivider({
-  className = "text-ivory",
+  className = "text-canvas",
   direction = "down",
   variant = "wave",
 }: CurveDividerProps) {

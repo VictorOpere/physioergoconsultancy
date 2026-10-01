@@ -36,7 +36,7 @@ export function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-40 transition-[background-color,box-shadow,backdrop-filter] duration-300 ease-out ${
           scrolled
-            ? "bg-ivory/85 shadow-nav backdrop-blur-xl"
+            ? "bg-canvas/85 shadow-nav backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
@@ -58,14 +58,14 @@ export function Navbar() {
                       aria-current={active ? "page" : undefined}
                       className={`relative rounded-full px-4 py-2 text-[0.95rem] font-medium transition-colors duration-200 ${
                         active
-                          ? "text-sage-700"
-                          : "text-charcoal-muted hover:text-charcoal"
+                          ? "text-leaf-700"
+                          : "text-ink-muted hover:text-ink"
                       }`}
                     >
                       {item.label}
                       <span
                         aria-hidden="true"
-                        className={`absolute inset-x-4 -bottom-0.5 h-px origin-left bg-sage-700 transition-transform duration-300 ease-out ${
+                        className={`absolute inset-x-4 -bottom-0.5 h-px origin-left bg-leaf-700 transition-transform duration-300 ease-out ${
                           active ? "scale-x-100" : "scale-x-0"
                         }`}
                         style={{ transitionTimingFunction: "var(--ease-out-quint)" }}
@@ -80,7 +80,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              className="hidden rounded-full bg-sage-700 px-6 py-3 text-[0.92rem] font-semibold text-ivory shadow-soft transition-[background-color,box-shadow] duration-200 hover:bg-sage-800 hover:shadow-lift lg:inline-flex"
+              className="hidden rounded-full bg-leaf-700 px-6 py-3 text-[0.92rem] font-semibold text-canvas shadow-soft transition-[background-color,box-shadow] duration-200 hover:bg-leaf-800 hover:shadow-lift lg:inline-flex"
             >
               Book a Consultation
             </Link>
@@ -90,7 +90,7 @@ export function Navbar() {
               onClick={() => setMenuOpen(true)}
               aria-label="Open navigation menu"
               aria-expanded={menuOpen}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-ivory/70 text-charcoal transition-colors duration-200 hover:bg-sage-50 lg:hidden"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-line bg-canvas/70 text-ink transition-colors duration-200 hover:bg-leaf-50 lg:hidden"
             >
               <Icon name="menu" size={22} />
             </button>

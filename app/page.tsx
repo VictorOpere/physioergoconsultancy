@@ -21,7 +21,7 @@ export default function HomePage() {
         title="Prevention Before Problems"
         lead="Unlike reactive healthcare approaches, our preventive-first model focuses on identifying risks early and developing solutions that are clinically sound, context-sensitive and tailored to African and hybrid work environments."
         steps={processSteps}
-        tone="sand"
+        tone="mist"
       />
       <Benefits />
       <WorkplaceBanner />

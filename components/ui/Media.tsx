@@ -13,9 +13,9 @@ interface MediaProps {
 
 const overlays = {
   none: "",
-  soft: "after:absolute after:inset-0 after:bg-gradient-to-t after:from-charcoal/35 after:to-transparent",
+  soft: "after:absolute after:inset-0 after:bg-gradient-to-t after:from-ink/35 after:to-transparent",
   strong:
-    "after:absolute after:inset-0 after:bg-gradient-to-br after:from-sage-950/80 after:via-sage-900/60 after:to-sage-800/40",
+    "after:absolute after:inset-0 after:bg-gradient-to-br after:from-leaf-950/80 after:via-leaf-900/60 after:to-leaf-800/40",
 };
 
 /**
@@ -33,7 +33,7 @@ export function Media({
 }: MediaProps) {
   return (
     <div
-      className={`relative overflow-hidden bg-sage-100 ${overlays[overlay]} ${className}`}
+      className={`relative overflow-hidden bg-leaf-100 ${overlays[overlay]} ${className}`}
     >
       <Image
         src={src}

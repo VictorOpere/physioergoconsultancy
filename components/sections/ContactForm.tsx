@@ -60,7 +60,7 @@ function validate(values: Values): Errors {
 }
 
 const fieldClass =
-  "w-full rounded-2xl border bg-surface px-4 py-3.5 text-[0.97rem] text-charcoal transition-colors duration-200 placeholder:text-charcoal-soft/70 focus:outline-none focus-visible:border-sage-600";
+  "w-full rounded-2xl border bg-surface px-4 py-3.5 text-[0.97rem] text-ink transition-colors duration-200 placeholder:text-ink-soft/70 focus:outline-none focus-visible:border-leaf-600";
 
 export function ContactForm() {
   const baseId = useId();
@@ -122,15 +122,15 @@ export function ContactForm() {
       <div
         role="status"
         aria-live="polite"
-        className="rounded-panel border border-sage-200 bg-sage-50 p-8 text-center sm:p-12"
+        className="rounded-panel border border-leaf-200 bg-leaf-50 p-8 text-center sm:p-12"
       >
-        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sage-700 text-ivory">
+        <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-leaf-700 text-canvas">
           <Icon name="check" size={26} strokeWidth={2} />
         </span>
-        <h3 className="text-subsection mt-6 text-charcoal">
+        <h3 className="text-subsection mt-6 text-ink">
           Thank you, {values.fullName.split(" ")[0]}.
         </h3>
-        <p className="mx-auto mt-4 max-w-md text-charcoal-muted">
+        <p className="mx-auto mt-4 max-w-md text-ink-muted">
           Your details are ready to send. Choose the button below to open the
           message in your email app, and the PhysioErgo team will respond
           directly.
@@ -139,7 +139,7 @@ export function ContactForm() {
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
             href={mailtoHref}
-            className="inline-flex items-center gap-2.5 rounded-full bg-sage-700 px-7 py-3.5 font-semibold text-ivory shadow-soft transition-colors duration-200 hover:bg-sage-800"
+            className="inline-flex items-center gap-2.5 rounded-full bg-leaf-700 px-7 py-3.5 font-semibold text-canvas shadow-soft transition-colors duration-200 hover:bg-leaf-800"
           >
             <Icon name="mail" size={18} />
             Send Your Enquiry
@@ -152,7 +152,7 @@ export function ContactForm() {
               setSubmitted(false);
               setStatus("idle");
             }}
-            className="inline-flex items-center rounded-full border border-sage-300 px-7 py-3.5 font-semibold text-charcoal transition-colors duration-200 hover:bg-sage-100"
+            className="inline-flex items-center rounded-full border border-leaf-300 px-7 py-3.5 font-semibold text-ink transition-colors duration-200 hover:bg-leaf-100"
           >
             Start a New Enquiry
           </button>
@@ -233,7 +233,7 @@ export function ContactForm() {
         <div className="sm:col-span-2">
           <label
             htmlFor={fieldId("interest")}
-            className="mb-2 block text-[0.86rem] font-semibold tracking-[0.02em] text-charcoal"
+            className="mb-2 block text-[0.86rem] font-semibold tracking-[0.02em] text-ink"
           >
             Area of Interest
           </label>
@@ -261,7 +261,7 @@ export function ContactForm() {
         <div className="sm:col-span-2">
           <label
             htmlFor={fieldId("message")}
-            className="mb-2 block text-[0.86rem] font-semibold tracking-[0.02em] text-charcoal"
+            className="mb-2 block text-[0.86rem] font-semibold tracking-[0.02em] text-ink"
           >
             Message
           </label>
@@ -286,11 +286,11 @@ export function ContactForm() {
         <Button type="submit" size="lg">
           Request a Consultation
         </Button>
-        <p className="text-[0.84rem] leading-relaxed text-charcoal-soft">
+        <p className="text-[0.84rem] leading-relaxed text-ink-soft">
           Prefer email? Write to{" "}
           <a
             href={site.emailHref}
-            className="font-medium text-sage-700 underline underline-offset-4"
+            className="font-medium text-leaf-700 underline underline-offset-4"
           >
             {site.email}
           </a>
@@ -341,11 +341,11 @@ function Field({
     <div>
       <label
         htmlFor={id}
-        className="mb-2 block text-[0.86rem] font-semibold tracking-[0.02em] text-charcoal"
+        className="mb-2 block text-[0.86rem] font-semibold tracking-[0.02em] text-ink"
       >
         {label}
         {optional ? (
-          <span className="ml-1.5 font-normal text-charcoal-soft">(optional)</span>
+          <span className="ml-1.5 font-normal text-ink-soft">(optional)</span>
         ) : null}
       </label>
       <input

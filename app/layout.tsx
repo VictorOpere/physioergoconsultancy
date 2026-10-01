@@ -48,6 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@PhysioErgoCon",
+    creator: "@PhysioErgoCon",
     title:
       "PhysioErgo Integrative Consultancy Ltd | Workplace Ergonomics & Wellness",
     description: site.description,
@@ -58,10 +60,39 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Organization data for search engines. Every field is drawn from `site`, so the
+ * markup cannot drift from what the pages themselves display.
+ */
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  alternateName: site.shortName,
+  slogan: site.tagline,
+  url: site.url,
+  description: site.description,
+  email: site.email,
+  telephone: site.phones.map((phone) => phone.tel.replace("tel:", "")),
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nairobi",
+    addressCountry: "KE",
+  },
+  areaServed: "KE",
+  sameAs: site.social.map((channel) => channel.href),
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${sofiaPro.variable} antialiased`}>
-      <body className="flex min-h-screen flex-col bg-ivory">
+      <body className="flex min-h-screen flex-col bg-canvas">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
         {/* Scroll reveals are progressive enhancement — show everything without JS. */}
         <noscript
           dangerouslySetInnerHTML={{

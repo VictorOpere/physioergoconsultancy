@@ -13,7 +13,7 @@ interface ProcessTimelineProps {
   title: string;
   lead?: string;
   steps: readonly Step[];
-  tone?: "ivory" | "sand";
+  tone?: "canvas" | "mist";
 }
 
 const columns: Record<number, string> = {
@@ -27,10 +27,10 @@ export function ProcessTimeline({
   title,
   lead,
   steps,
-  tone = "ivory",
+  tone = "canvas",
 }: ProcessTimelineProps) {
   return (
-    <Section className={tone === "sand" ? "bg-sand-100" : ""}>
+    <Section className={tone === "mist" ? "bg-mist" : ""}>
       <SectionHeading eyebrow={eyebrow} title={title} lead={lead} />
 
       <ol
@@ -38,11 +38,11 @@ export function ProcessTimeline({
       >
         <span
           aria-hidden="true"
-          className="absolute bottom-6 left-[1.4rem] top-6 w-px bg-sage-200 md:hidden"
+          className="absolute bottom-6 left-[1.4rem] top-6 w-px bg-leaf-200 md:hidden"
         />
         <span
           aria-hidden="true"
-          className="absolute left-6 right-6 top-[1.4rem] hidden h-px bg-sage-200 md:block"
+          className="absolute left-6 right-6 top-[1.4rem] hidden h-px bg-leaf-200 md:block"
         />
 
         {steps.map((step, index) => (
@@ -55,18 +55,18 @@ export function ProcessTimeline({
             <span
               className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-[0.82rem] font-semibold tracking-[0.02em] transition-colors duration-300 ${
                 index === 0
-                  ? "border-sage-700 bg-sage-700 text-ivory"
-                  : `border-sage-200 text-sage-700 ${tone === "sand" ? "bg-sand-100" : "bg-ivory"}`
+                  ? "border-leaf-700 bg-leaf-700 text-canvas"
+                  : `border-leaf-200 text-leaf-700 ${tone === "mist" ? "bg-mist" : "bg-canvas"}`
               }`}
             >
               {step.number}
             </span>
 
             <div className="pb-2 md:mt-7 md:pb-0 md:pr-4">
-              <h3 className="text-[1.08rem] font-semibold uppercase tracking-[0.08em] text-charcoal">
+              <h3 className="text-[1.08rem] font-semibold uppercase tracking-[0.08em] text-ink">
                 {step.title}
               </h3>
-              <p className="mt-3 text-[0.96rem] leading-relaxed text-charcoal-muted">
+              <p className="mt-3 text-[0.96rem] leading-relaxed text-ink-muted">
                 {step.description}
               </p>
             </div>

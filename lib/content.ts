@@ -14,13 +14,47 @@ export const site = {
   url: "https://www.physioergoconsultancy.org",
   description:
     "PhysioErgo Integrative Consultancy provides integrated ergonomics, physiotherapy and workplace wellness solutions designed to create healthier, safer and higher-performing workplaces.",
-  phone: "0710305751",
-  phoneHref: "tel:+254710305751",
+  /**
+   * Both lines carry WhatsApp. Displayed in spaced local form because that is
+   * how a Kenyan client dials them; the hrefs keep the +254 international form
+   * so the links still work from abroad.
+   */
+  phones: [
+    {
+      display: "0181 820 503",
+      tel: "tel:+254181820503",
+      whatsapp: "https://wa.me/254181820503",
+    },
+    {
+      display: "0181 820 504",
+      tel: "tel:+254181820504",
+      whatsapp: "https://wa.me/254181820504",
+    },
+  ],
   email: "info@physioergoconsultancy.org",
   emailHref: "mailto:info@physioergoconsultancy.org",
   city: "Nairobi, Kenya",
   postalAddress: ["P.O. Box 73797 – 00200", "City Square, Nairobi, Kenya"],
   developer: "Krazzy Cloud Computing",
+  /** Official accounts, with QR and tracking parameters stripped. */
+  social: [
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/physioergoconsultancy",
+      icon: "instagram",
+    },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/share/17j88UbFAj/",
+      icon: "facebook",
+    },
+    {
+      label: "TikTok",
+      href: "https://www.tiktok.com/@physioergoconsult",
+      icon: "tiktok",
+    },
+    { label: "X", href: "https://x.com/physioergocon", icon: "x" },
+  ],
 } as const;
 
 export const navigation = [
@@ -32,61 +66,72 @@ export const navigation = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-/** Verified Unsplash sources. Swap these for PhysioErgo photography when available. */
-const unsplash = (id: string) => `https://images.unsplash.com/${id}`;
-
+/**
+ * Every frame below was opened and checked before being written in, and the alt
+ * text describes what is actually visible rather than the slot name.
+ *
+ * `standingDesk`, `workstationDetail` and `screenFatigue` are PhysioErgo's own
+ * photographs. The rest are free-licence Unsplash stock, several from
+ * Lagos-based shoots, downloaded and served locally rather than hotlinked;
+ * Unsplash+ premium images were ruled out as they carry a separate Getty licence.
+ * Replace these with company photography as it becomes available.
+ */
 export const images = {
   heroConsultation: {
-    src: unsplash("photo-1573497620053-ea5300f94f21"),
-    alt: "Two professionals seated at a small table beside a window, talking through a workplace consultation.",
+    src: "/photos/hero-consultation.webp",
+    alt: "Two colleagues talking across an office desk with a laptop open between them.",
   },
   calmOffice: {
-    src: unsplash("photo-1497215728101-856f4ea42174"),
-    alt: "An uncluttered workstation beside floor-to-ceiling windows, with a tall plant and plenty of daylight.",
+    src: "/photos/calm-office.webp",
+    alt: "A woman working at an uncluttered desk with a laptop, sitting upright beside a bright window.",
   },
   collaborativeTable: {
-    src: unsplash("photo-1517048676732-d65bc937f952"),
-    alt: "Colleagues seated along a long wooden table, writing in notebooks during a working session.",
+    src: "/photos/collaborative-table.webp",
+    alt: "Three colleagues seated around a boardroom table with laptops, talking beside tall windows.",
   },
   hybridWorker: {
-    src: unsplash("photo-1616587894289-86480e533129"),
-    alt: "A professional joining a video call from a tidy home workstation with a laptop, tablet and plants.",
+    src: "/photos/hybrid-worker.webp",
+    alt: "A professional holding a tablet and smiling in a modern open workspace.",
   },
   teamLaptop: {
-    src: unsplash("photo-1551836022-d5d88e9218df"),
-    alt: "Two colleagues working side by side at a laptop on a wooden desk.",
+    src: "/photos/team-laptop.webp",
+    alt: "Two colleagues leaning in over a shared laptop at a desk.",
   },
   openOffice: {
-    src: unsplash("photo-1559136555-9303baea8ebd"),
-    alt: "An open-plan office where colleagues work at long shared desks under large windows.",
+    src: "/photos/open-office.webp",
+    alt: "A team meeting around a long conference table with laptops and notebooks in a daylit room.",
   },
   moodyBoardroom: {
-    src: unsplash("photo-1541746972996-4e0b0f43e02a"),
-    alt: "A modern meeting room at dusk, seen through glass walls.",
+    src: "/photos/modern-meeting.webp",
+    alt: "A professional standing at a desk with a laptop and notebook, beside a wall screen and plants.",
   },
   workstationDetail: {
-    src: unsplash("photo-1487017159836-4e23ece2e4cf"),
-    alt: "A laptop and mouse on a dark wooden desk beside a moulded office chair, seen from above.",
+    src: "/photos/ergonomic-chair.webp",
+    alt: "A mesh office chair with headrest and adjustable arms beside a desk with two monitors and a laptop.",
   },
   keyboardPosture: {
-    src: unsplash("photo-1486312338219-ce68d2c6f44d"),
-    alt: "Close view of hands typing on a laptop keyboard next to an external monitor.",
+    src: "/photos/keyboard-posture.webp",
+    alt: "Close view of hands resting on a laptop keyboard while working at a desk.",
   },
   remoteWellbeing: {
-    src: unsplash("photo-1598257006458-087169a1f08d"),
-    alt: "A professional working from a laptop on a sofa beside a large houseplant.",
+    src: "/photos/remote-wellbeing.webp",
+    alt: "A professional working from a laptop on a sofa beside a window and houseplants.",
   },
   standingDesk: {
-    src: unsplash("photo-1521898284481-a5ec348cb555"),
-    alt: "Overhead view of a person working at a wooden desk with a laptop and handwritten notes.",
+    src: "/photos/standing-desk.webp",
+    alt: "A height-adjustable desk raised to standing height, with a laptop, tablet and separate keyboard.",
+  },
+  screenFatigue: {
+    src: "/photos/screen-glasses.webp",
+    alt: "A pair of screen glasses resting on an open laptop keyboard.",
   },
   diverseTeam: {
-    src: unsplash("photo-1531482615713-2afd69097998"),
-    alt: "Colleagues working closely together at computer workstations in a busy shared office.",
+    src: "/photos/diverse-team.webp",
+    alt: "Colleagues working at laptops along shared desks in an open-plan office with plants.",
   },
   partnership: {
-    src: unsplash("photo-1600880292089-90a7e086ee0c"),
-    alt: "Several colleagues clasping one another's wrists together above a desk.",
+    src: "/photos/focused-work.webp",
+    alt: "A professional working at a wooden desk with a notebook, surrounded by greenery.",
   },
 } as const;
 

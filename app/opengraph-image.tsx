@@ -23,7 +23,7 @@ export default async function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#FAF7F2",
+          backgroundColor: "#FFFFFF",
           padding: "72px 80px",
           fontFamily: "Sofia Pro",
         }}
@@ -36,7 +36,7 @@ export default async function OpengraphImage() {
             width: 560,
             height: 560,
             borderRadius: 9999,
-            backgroundColor: "#E2E9E3",
+            backgroundColor: "#E4F2D9",
           }}
         />
         <div
@@ -47,7 +47,7 @@ export default async function OpengraphImage() {
             width: 480,
             height: 480,
             borderRadius: 9999,
-            backgroundColor: "#F4EDE2",
+            backgroundColor: "#F4F6F3",
           }}
         />
 
@@ -57,7 +57,7 @@ export default async function OpengraphImage() {
               width: 14,
               height: 14,
               borderRadius: 9999,
-              backgroundColor: "#4A5E50",
+              backgroundColor: "#3F6B24",
             }}
           />
           <div
@@ -66,7 +66,7 @@ export default async function OpengraphImage() {
               fontWeight: 600,
               letterSpacing: "0.22em",
               textTransform: "uppercase",
-              color: "#4A5E50",
+              color: "#3F6B24",
             }}
           >
             {site.tagline}
@@ -80,7 +80,7 @@ export default async function OpengraphImage() {
               fontWeight: 600,
               lineHeight: 1.06,
               letterSpacing: "-0.03em",
-              color: "#1C1F1D",
+              color: "#15201A",
             }}
           >
             Healthier Workplaces.
@@ -91,7 +91,7 @@ export default async function OpengraphImage() {
               fontWeight: 600,
               lineHeight: 1.06,
               letterSpacing: "-0.03em",
-              color: "#4A5E50",
+              color: "#3F6B24",
             }}
           >
             Better Performance.
@@ -101,7 +101,7 @@ export default async function OpengraphImage() {
               marginTop: 30,
               fontSize: 27,
               lineHeight: 1.5,
-              color: "#5A605B",
+              color: "#51594F",
               maxWidth: 820,
             }}
           >
@@ -115,14 +115,14 @@ export default async function OpengraphImage() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            borderTop: "1px solid #E4E0D7",
+            borderTop: "1px solid #E2E6E1",
             paddingTop: 28,
           }}
         >
-          <div style={{ fontSize: 27, fontWeight: 600, color: "#1C1F1D" }}>
+          <div style={{ fontSize: 27, fontWeight: 600, color: "#15201A" }}>
             PhysioErgo Integrative Consultancy Ltd
           </div>
-          <div style={{ fontSize: 24, color: "#5A605B" }}>Nairobi, Kenya</div>
+          <div style={{ fontSize: 24, color: "#51594F" }}>Nairobi, Kenya</div>
         </div>
       </div>
     ),
