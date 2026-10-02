@@ -81,6 +81,13 @@ const organizationJsonLd = {
   },
   areaServed: "KE",
   sameAs: site.social.map((channel) => channel.href),
+  contactPoint: site.phones.map((phone) => ({
+    "@type": "ContactPoint",
+    telephone: phone.tel.replace("tel:", ""),
+    email: site.email,
+    contactType: "customer service",
+    areaServed: "KE",
+  })),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

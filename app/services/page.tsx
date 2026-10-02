@@ -4,18 +4,24 @@ import { PageHeader } from "@/components/sections/PageHeader";
 import { ServiceFamilies } from "@/components/sections/ServiceFamilies";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { WhoWeSupport } from "@/components/sections/WhoWeSupport";
-import { images } from "@/lib/content";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { images, pageJsonLd, pageMeta } from "@/lib/content";
 
-export const metadata: Metadata = {
+const description =
+  "Ergonomic assessments, workplace ergonomics, physiotherapy-led interventions, training, musculoskeletal risk prevention and workplace wellness consulting from PhysioErgo in Nairobi, Kenya.";
+
+export const metadata: Metadata = pageMeta({
   title: "Services",
-  description:
-    "Ergonomic assessments, workplace ergonomics, physiotherapy-led interventions, training, musculoskeletal risk prevention and workplace wellness consulting from PhysioErgo in Nairobi, Kenya.",
-  alternates: { canonical: "/services" },
-};
+  description,
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({ name: "Services", description, path: "/services" })}
+      />
       <PageHeader
         eyebrow="Our Services"
         title="How We Support Your Workplace"

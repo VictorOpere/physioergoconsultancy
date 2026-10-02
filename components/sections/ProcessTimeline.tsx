@@ -13,8 +13,20 @@ interface ProcessTimelineProps {
   title: string;
   lead?: string;
   steps: readonly Step[];
-  tone?: "canvas" | "mist";
+  tone?: "canvas" | "mist" | "leaf";
 }
+
+const grounds = {
+  canvas: "",
+  mist: "bg-mist",
+  leaf: "bg-leaf-50",
+} as const;
+
+const circleGrounds = {
+  canvas: "bg-canvas",
+  mist: "bg-mist",
+  leaf: "bg-leaf-50",
+} as const;
 
 const columns: Record<number, string> = {
   4: "md:grid-cols-4",
@@ -30,7 +42,7 @@ export function ProcessTimeline({
   tone = "canvas",
 }: ProcessTimelineProps) {
   return (
-    <Section className={tone === "mist" ? "bg-mist" : ""}>
+    <Section className={grounds[tone]}>
       <SectionHeading eyebrow={eyebrow} title={title} lead={lead} />
 
       <ol
@@ -56,7 +68,7 @@ export function ProcessTimeline({
               className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-[0.82rem] font-semibold tracking-[0.02em] transition-colors duration-300 ${
                 index === 0
                   ? "border-leaf-700 bg-leaf-700 text-canvas"
-                  : `border-leaf-200 text-leaf-700 ${tone === "mist" ? "bg-mist" : "bg-canvas"}`
+                  : `border-leaf-200 text-leaf-700 ${circleGrounds[tone]}`
               }`}
             >
               {step.number}

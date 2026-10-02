@@ -5,18 +5,28 @@ import { Differentiators } from "@/components/sections/Differentiators";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Pillars } from "@/components/sections/Pillars";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
-import { approachStages, images } from "@/lib/content";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { approachStages, images, pageJsonLd, pageMeta } from "@/lib/content";
 
-export const metadata: Metadata = {
+const description =
+  "A preventive-first model that assesses context, analyses physical, cognitive and psychosocial risk, and designs practical ergonomics and physiotherapy-led interventions.";
+
+export const metadata: Metadata = pageMeta({
   title: "Our Approach",
-  description:
-    "A preventive-first model that assesses context, analyses physical, cognitive and psychosocial risk, and designs practical ergonomics and physiotherapy-led interventions.",
-  alternates: { canonical: "/approach" },
-};
+  description,
+  path: "/approach",
+});
 
 export default function ApproachPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: "Our Approach",
+          description,
+          path: "/approach",
+        })}
+      />
       <PageHeader
         eyebrow="Our Method"
         title="Prevention Before Problems"

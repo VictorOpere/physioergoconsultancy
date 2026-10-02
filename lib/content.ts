@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { IconName } from "@/components/ui/Icon";
 
 /**
@@ -186,6 +187,95 @@ export const gallery = [
   },
 ] as const;
 
+const homeTitle =
+  "PhysioErgo Integrative Consultancy Ltd | Workplace Ergonomics & Wellness";
+
+/** Shared Open Graph and Twitter fields so a share of any route uses that page. */
+export function pageMeta({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}): Metadata {
+  const isHome = path === "/";
+  const fullTitle = isHome ? homeTitle : `${title} | ${site.name}`;
+  const url = isHome ? site.url : `${site.url}${path}`;
+
+  return {
+    title: isHome ? { absolute: homeTitle } : title,
+    description,
+    alternates: { canonical: path },
+    openGraph: {
+      type: "website",
+      locale: "en_KE",
+      url,
+      siteName: site.name,
+      title: fullTitle,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@PhysioErgoCon",
+      creator: "@PhysioErgoCon",
+      title: fullTitle,
+      description,
+    },
+  };
+}
+
+/** WebPage plus a breadcrumb. The homepage crumb is Home only. */
+export function pageJsonLd({
+  name,
+  description,
+  path,
+}: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  const isHome = path === "/";
+  const url = isHome ? site.url : `${site.url}${path}`;
+  const crumbs = isHome
+    ? [{ name: "Home", url }]
+    : [
+        { name: "Home", url: site.url },
+        { name, url },
+      ];
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: isHome ? homeTitle : name,
+        description,
+        url,
+        isPartOf: { "@type": "WebSite", name: site.name, url: site.url },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: crumbs.map((crumb, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: crumb.name,
+          item: crumb.url,
+        })),
+      },
+    ],
+  };
+}
+
+function galleryShot(file: string) {
+  const shot = gallery.find((item) => item.src.endsWith(`/${file}`));
+  if (!shot) {
+    throw new Error(`Missing gallery photo ${file}`);
+  }
+  return shot;
+}
+
 export const hero = {
   eyebrow: "Workplace Wellness",
   headingLines: ["Healthier Workplaces.", "Better Performance."],
@@ -227,6 +317,7 @@ export interface Pillar {
   title: string;
   description: string;
   icon: IconName;
+  image: (typeof gallery)[number];
 }
 
 export const pillars: Pillar[] = [
@@ -236,18 +327,21 @@ export const pillars: Pillar[] = [
     description:
       "Addressing posture, workstation design and musculoskeletal health.",
     icon: "posture",
+    image: galleryShot("chair-profile.webp"),
   },
   {
     number: "02",
     title: "Cognitive Ergonomics",
     description: "Focusing on mental workload, attention and decision-making.",
     icon: "mind",
+    image: galleryShot("screen-glasses.webp"),
   },
   {
     number: "03",
     title: "Organizational Ergonomics",
     description: "Optimizing systems, communication and workplace culture.",
     icon: "network",
+    image: galleryShot("desk-overhead.webp"),
   },
 ];
 

@@ -5,17 +5,23 @@ import { PageHeader } from "@/components/sections/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/SectionHeading";
-import { site } from "@/lib/content";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { pageJsonLd, pageMeta, site } from "@/lib/content";
 
-export const metadata: Metadata = {
+const description = `Talk to PhysioErgo Integrative Consultancy Ltd in Nairobi, Kenya. Call ${site.phones[0].display} or email ${site.email} to arrange a workplace ergonomics or wellness consultation.`;
+
+export const metadata: Metadata = pageMeta({
   title: "Contact",
-  description: `Talk to PhysioErgo Integrative Consultancy Ltd in Nairobi, Kenya. Call ${site.phones[0].display} or email ${site.email} to arrange a workplace ergonomics or wellness consultation.`,
-  alternates: { canonical: "/contact" },
-};
+  description,
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({ name: "Contact", description, path: "/contact" })}
+      />
       <PageHeader
         eyebrow="Contact"
         title="Start the Conversation"

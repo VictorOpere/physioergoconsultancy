@@ -7,11 +7,25 @@ import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { WhoWeSupport } from "@/components/sections/WhoWeSupport";
 import { WorkplaceBanner } from "@/components/sections/WorkplaceBanner";
-import { processSteps } from "@/lib/content";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { pageJsonLd, pageMeta, processSteps, site } from "@/lib/content";
+
+export const metadata = pageMeta({
+  title: site.name,
+  description: site.description,
+  path: "/",
+});
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd
+        data={pageJsonLd({
+          name: "Home",
+          description: site.description,
+          path: "/",
+        })}
+      />
       <Hero />
       <AboutIntro />
       <Pillars />
@@ -21,7 +35,7 @@ export default function HomePage() {
         title="Prevention Before Problems"
         lead="Unlike reactive healthcare approaches, our preventive-first model focuses on identifying risks early and developing solutions that are clinically sound, context-sensitive and tailored to African and hybrid work environments."
         steps={processSteps}
-        tone="mist"
+        tone="leaf"
       />
       <Benefits />
       <WorkplaceBanner />

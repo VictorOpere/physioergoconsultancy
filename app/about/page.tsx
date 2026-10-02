@@ -4,18 +4,22 @@ import { CTASection } from "@/components/sections/CTASection";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Values } from "@/components/sections/Values";
 import { VisionMission } from "@/components/sections/VisionMission";
-import { about, images } from "@/lib/content";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { about, images, pageJsonLd, pageMeta } from "@/lib/content";
 
-export const metadata: Metadata = {
+const description =
+  "PhysioErgo Integrative Consultancy Ltd is a Kenyan-based firm advancing workplace health, safety and performance through integrated ergonomics and physiotherapy solutions.";
+
+export const metadata: Metadata = pageMeta({
   title: "About",
-  description:
-    "PhysioErgo Integrative Consultancy Ltd is a Kenyan-based firm advancing workplace health, safety and performance through integrated ergonomics and physiotherapy solutions.",
-  alternates: { canonical: "/about" },
-};
+  description,
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={pageJsonLd({ name: "About", description, path: "/about" })} />
       <PageHeader
         eyebrow="About PhysioErgo"
         title="Wellness in Motion"
