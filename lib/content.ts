@@ -317,7 +317,7 @@ export interface Pillar {
   title: string;
   description: string;
   icon: IconName;
-  image: (typeof gallery)[number];
+  image: { src: string; alt: string };
 }
 
 export const pillars: Pillar[] = [
@@ -334,14 +334,20 @@ export const pillars: Pillar[] = [
     title: "Cognitive Ergonomics",
     description: "Focusing on mental workload, attention and decision-making.",
     icon: "mind",
-    image: galleryShot("screen-glasses.webp"),
+    image: {
+      src: "/photos/cognitive-ergonomics.webp",
+      alt: "A professional at a laptop, with a lightbulb and arrows suggesting mental workload and decision-making.",
+    },
   },
   {
     number: "03",
     title: "Organizational Ergonomics",
     description: "Optimizing systems, communication and workplace culture.",
     icon: "network",
-    image: galleryShot("desk-overhead.webp"),
+    image: {
+      src: "/photos/organizational-ergonomics.webp",
+      alt: "An illustration of a seated workstation beside two colleagues in conversation, showing work organized as a shared system.",
+    },
   },
 ];
 
